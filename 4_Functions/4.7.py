@@ -1,20 +1,30 @@
-score = input("Enter score: ")
+# Exercise 7: Rewrite the grade program from the previous chapter using a function called computegrade 
+# that takes a score as its parameter and returns a grade as a string.
+
+def computegrade(score):
+    if score >= 10.0:
+        print("Bad score")
+        exit()
+    elif score >= 9.0:
+        grade = "A"
+    elif score >= 8.0:
+        grade = "B"
+    elif score >= 7.0:
+        grade = "C"
+    elif score >= 6.0:
+        grade = "D"    
+    else:
+        grade = "F"        
+    return(grade)
+
+scoreInput = input("Enter score: ")
 
 try: 
-    scoreFlt = float(score)
+    scoreFlt = float(scoreInput)
+    
 except:
     print("Bad score")
     exit()
 
-if scoreFlt >= 10.0:
-    print("Bad score")
-elif scoreFlt >= 9.0:
-    print("Grade: A")
-elif scoreFlt >= 8.0:
-    print("Grade: B")
-elif scoreFlt >= 7.0:
-    print("Grade: C")
-elif scoreFlt >= 6.0:
-    print("Grade: D")
-else:
-    print("Grade: F")
+gradeResult = computegrade(scoreFlt)
+print("Grade: ", gradeResult)
